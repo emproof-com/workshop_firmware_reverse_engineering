@@ -1,11 +1,21 @@
 services:
+  # One-shot helper service to register ARM64 emulation (binfmt/qemu) on the host.
+  # Run once with:  docker compose run --rm --profile setup binfmt
+  binfmt:
+    image: tonistiigi/binfmt:latest      # tiny utility image to manage binfmt handlers
+    privileged: true                     # required to install binfmt_misc entries on the host
+    command: ["--install", "arm64"]      # register arm64 so x86_64 hosts can run/build arm64
+    restart: "no"                        # do not restart; this is a one-off helper
+    profiles: ["setup"]                  # only runs when explicitly requested via --profile setup
+
+  # Main workshop container (always ARM64).
   kali:
-    platform: "linux/arm64"      # enforce arm64
-    build: .
-    image: kali-re-tools:arm64
-    working_dir: /work
+    platform: "linux/arm64"              # enforce ARM64 regardless of host architecture
+    build: .                             # build from local Dockerfile (respects DOCKER_DEFAULT_PLATFORM)
+    image: kali-re-tools:arm64           # local tag for the built image
+    working_dir: /work                   # default working directory inside the container
     volumes:
-      - ./:/work
-    stdin_open: true
-    tty: true
-    entrypoint: ["/bin/bash"]
+      - ./:/work                         # mount the repo into the container
+    stdin_open: true                     # keep STDIN open for interactive shells
+    tty: true                            # allocate a TTY for better UX
+    entrypoint: ["/bin/bash"]            # start an interactive shell by default

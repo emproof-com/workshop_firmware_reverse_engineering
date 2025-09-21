@@ -17,7 +17,6 @@ RUN apt-get update && \
         binwalk \
         john \
         wordlists && \
-  
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /work
