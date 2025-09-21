@@ -8,7 +8,7 @@ This repository contains slides and hands-on materials for [Emproof's](https://e
 * embedded-Linux firmware unpacking;
 * bare-metal analysis;
 * crypto detection;
-* obfuscation/anti-analysis techniques and how to bypass them
+* obfuscation/anti-analysis techniques and how to bypass them;
 
 If this is up your alley, also check out the [Emproof technical webinar series](https://github.com/emproof-com/webinars) with additional exercises and recorded sessions.
 
@@ -30,10 +30,10 @@ For several tasks we require an AArch64 Linux execution environment. We provide 
 ./docker_run.sh
 ```
 
-> Note: The first run may take a while to build the image.
+> **Note:** The first run may take a while to build the image.
+ 
 > **Note (architecture):** The Docker Compose service sets `platform: "linux/arm64"`.  
-> On x86_64 hosts (Intel macOS/Windows/Linux) Docker Desktop will run the image under emulation, so the first build and startup can be slower — that’s expected.  
-> On native ARM64 hosts (Apple Silicon, ARM servers) it runs natively and is faster.
+> On x86_64 hosts (Intel macOS/Windows/Linux) Docker Desktop will run the image under emulation, so the first build and startup can be slower — that’s expected. On native ARM64 hosts (Apple Silicon, ARM servers) it runs natively and is faster.
 
 In addition, install the following graphical tools on your host for interactive reverse engineering tasks (these are not included in the container):
 
@@ -92,5 +92,4 @@ Some **third-party / externally sourced samples** are **excluded** from the GPL 
 - [tasks/embedded_linux_1/samples/](tasks/embedded_linux_1/samples/)
 - [tasks/embedded_linux_2/samples/](tasks/embedded_linux_2/samples/)
 
-> Notes  
-> - If a subdirectory includes its own license file or header, that license takes precedence for that subdirectory’s contents.
+> **Note:** If a subdirectory includes its own license file or header, that license takes precedence for that subdirectory’s contents.
