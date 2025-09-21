@@ -1,0 +1,11 @@
+services:
+  kali:
+    platform: "linux/arm64"      # enforce arm64
+    build: .
+    image: kali-re-tools:arm64
+    working_dir: /work
+    volumes:
+      - ./:/work
+    stdin_open: true
+    tty: true
+    entrypoint: ["/bin/bash"]
