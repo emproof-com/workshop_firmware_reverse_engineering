@@ -84,7 +84,7 @@ Tasks can be attempted independently, but we provide a **recommended order** (li
 
 ## License
 
-Unless noted otherwise, all workshop materials in this repository are licensed under the **GNU General Public License, version 2 (GPL-2.0)**. See [`LICENSE.txt`](LICENSE.txt) for the full text.
+Unless noted otherwise, all workshop materials in this repository are licensed under the **GNU General Public License, version 2 (GPL-2.0)**. See [`LICENSE`](LICENSE) for the full text.
 
 Some **third-party / externally sourced samples** are **excluded** from the GPL and provided **for analysis/education only** (no redistribution). These are:
 
