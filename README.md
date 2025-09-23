@@ -1,6 +1,6 @@
 # Workshop: Firmware Reverse Engineering
 
-This repository contains slides and hands-on materials for [Emproof's](https://emproof.com) workshop on firmware reverse engineering, presented at [ScapyCon Automotive 2025](https://dissec.to/scapycon-automotive-2025/). The workshop targets a technical audience with minimal security experience and teaches the fundamentals through practical, self-contained tasks. Topics include
+This repository contains [slides](slides.pdf) and hands-on materials for [Emproof's](https://emproof.com) workshop on firmware reverse engineering, presented at [ScapyCon Automotive 2025](https://dissec.to/scapycon-automotive-2025/). The workshop targets a technical audience with minimal security experience and teaches the fundamentals through practical, self-contained tasks. Topics include
 
 * basic file/ELF analysis;
 * software cracking and keygenning;
