@@ -9,6 +9,7 @@ RUN apt-get update && \
         zlib1g-dev \
         libzstd-dev \
         pkg-config \
+        unzip \
         binutils \
         gcc \
         git \
