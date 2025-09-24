@@ -4,7 +4,7 @@ Sometimes we encounter binaries that perform symmetric encryption/decryption wit
 
 1. Familiarize yourself with the binary. Run it on the provided ciphertext and verify the output file: `./aes_detect --in secret.bin --out plain.txt`
 
-2. Open the binary in Ghidra or Binary Ninja and locate the AES decryption call (EVP AES-128-CBC). Identify the function that performs the decryption.
+2. Open the binary in Ghidra or Binary Ninja and locate the AES decryption call (EVP AES-128-CBC). Identify the function that performs the decryption. Note: Use the `*.armv7` for Binary Ninja Free; the free version doesn’t support AArch64.
 
 3. Backtrack the parameters passed to the decryption call. Recover the **IV** and the **key**, and note where they originate (address/section).
 

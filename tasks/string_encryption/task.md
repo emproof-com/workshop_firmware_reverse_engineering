@@ -8,7 +8,7 @@ Malware often hides context-revealing strings to increase analysis effort. A com
 
 Even if we saw the plaintext at runtime, we often cannot (or do not want to) execute binaries, for example in the case of malware or a missing execution environment. Therefore, we now take a look how to statically deal with encrypted strings.
 
-3. Open the binary in Ghidra or Binary Ninja and locate the string-decryption function (hint: a small routine called many times with byte arrays that look non-ASCII).
+3. Open the binary in Ghidra or Binary Ninja and locate the string-decryption function (hint: a small routine called many times with byte arrays that look non-ASCII). Note: Use the `*.armv7` for Binary Ninja Free; the free version doesn’t support AArch64.
 
 4. Reverse engineer the routine: how does it work?
 

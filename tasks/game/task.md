@@ -4,7 +4,7 @@ In this task we practice code understanding and cracking on a small number-guess
 
 1. Play the game and get a feeling for how it works (inputs, messages, trial vs full).
 
-2. Open the game in your analysis tool (Ghidra or Binary Ninja) and reverse engineer the game logic (input handling, random number generation, attempt loop, success/failure flow).
+2. Open the game in your analysis tool (Ghidra or Binary Ninja) and reverse engineer the game logic (input handling, random number generation, attempt loop, success/failure flow). Note: Use the `*.armv7` for Binary Ninja Free; the free version doesn’t support AArch64.
 
 3. Find the serial that unlocks the full game mode (locate where it is compared and recover the accepted value).
 

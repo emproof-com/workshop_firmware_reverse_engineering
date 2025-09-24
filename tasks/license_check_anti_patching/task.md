@@ -6,7 +6,7 @@ To raise the bar against such patches, a technique called code checksumming can 
 
 In this exercise, you’ll inspect such a check and try to bypass it.
 
-1. Open `license_check_crc` in Ghidra or Binary Ninja. Analyze the license check: how does it work?
+1. Open `license_check_crc` in Ghidra or Binary Ninja. Analyze the license check: how does it work? Note: Use the `*.armv7` for Binary Ninja Free; the free version doesn’t support AArch64.
 
 2. Patch the binary in `main` so it always jumps to “Access granted!”. Run the binary. What happens?
 

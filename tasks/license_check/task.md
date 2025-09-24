@@ -11,12 +11,12 @@ It’s not always that simple. A common workflow is to load the binary in an ana
    Use strings/xrefs to reach the check, inspect the code around it, and note the condition that leads to acceptance.
 
 3. Repeat the same workflow in **Binary Ninja**.  
-   Navigate from data to code, identify the comparison, and map the path that results in “Access granted!”.
+   Navigate from data to code, identify the comparison, and map the path that results in “Access granted!”. Note: Use the `*.armv7` for Binary Ninja Free; the free version doesn’t support AArch64.
 
 Another route is **patching**: modify the executable so the check always succeeds. This typically means neutralizing a conditional check or forcing the validator to return success. Save the patched binary and confirm that the premium feature unlocks.
 
 4. Apply a minimal patch in **Ghidra** to unlock the premium feature.  
-   Document the change you made and verify the result.
+   Verify the result.
 
 5. Repeat the patching approach in **Binary Ninja**.  
-   Document your change and verify that the program now always accepts.
+   Verify that the program now always accepts. Note: Use the `*.armv7` for Binary Ninja Free; the free version doesn’t support AArch64.

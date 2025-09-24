@@ -34,6 +34,7 @@ For several tasks we require an AArch64 Linux execution environment. We provide 
  
 > **Note (architecture):** The Docker Compose service sets `platform: "linux/arm64"`.  
 > On x86_64 hosts (Intel macOS/Windows/Linux) Docker Desktop will run the image under emulation, so the first build and startup can be slower — that’s expected. On native ARM64 hosts (Apple Silicon, ARM servers) it runs natively and is faster.
+> **Note:** The Docker container can also run ARMv7 (armhf) binaries. We install the armhf runtime (dynamic loader + libs) in the image and register binfmt handlers for both `aarch64` and `arm` via the startup script.
 
 In addition, install the following graphical tools on your host for interactive reverse engineering tasks (these are not included in the container):
 
@@ -41,6 +42,8 @@ In addition, install the following graphical tools on your host for interactive 
 * [Binary Ninja Free](https://binary.ninja/free/)
 
 Both tools are available for Windows, Linux, and macOS.
+
+> **Note:** Binary Ninja Free does **not** support AArch64. For AArch64 analysis use Ghidra (or a licensed Binary Ninja build). Therefore, several labs ship an **ARMv7 companion** binary (`*.armv7`) specifically for Binary Ninja Free; these can also be run in the same container.
 
 
 ## Tasks Order
@@ -79,7 +82,6 @@ Tasks can be attempted independently, but we provide a **recommended order** (li
 * [tasks/license_check_anti_patching](tasks/license_check_anti_patching): anti-patching via code checksumming; understand the CRC guard and learn ways to bypass it.
 
 * [tasks/fibonacci_obfuscation](tasks/fibonacci_obfuscation): clean vs. obfuscated Fibonacci implementations (switch flattening, computed goto, opaque predicates, arithmetic obfuscation, small VM); understand techniques and normalize them.
-
 
 
 ## License

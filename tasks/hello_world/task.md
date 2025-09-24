@@ -59,3 +59,5 @@ We’ve now seen how `file`, `strings`, `readelf`, and `objdump` already reveal 
     - Switch to a higher-level view (IL/HLIL)/decompiler.
   
     What does `main` do, and where is `compute` called? Compare the decompiler output to the source code. Compare the workflow to Ghidra.
+
+    Note: Use the `*.armv7` for Binary Ninja Free; the free version doesn’t support AArch64.

@@ -4,7 +4,7 @@ Without additional protections, analyzing and understanding algorithms in binari
 
 In this exercise you’ll see a clean Fibonacci implementation and several obfuscated variants. Your goal is to examine each style, understand its impact on analysis, and explain what’s really going on.
 
-1. Open `fib_obfuscated` in Ghidra or Binary Ninja. Look at `fib_ref`. What does it do?
+1. Open `fib_obfuscated` in Ghidra or Binary Ninja. Look at `fib_ref`. What does it do? Note: Use the `*.armv7` for Binary Ninja Free; the free version doesn’t support AArch64.
 
 2. Analyze `fib_flat_switch`. How does it work, and what does it compute? How would you "bypass" the obfuscation (i.e., simplify the control flow back to a normal loop/pseudocode)?
 

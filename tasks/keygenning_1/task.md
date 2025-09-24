@@ -5,7 +5,7 @@ In this task we practice keygenning on a small sample that checks a username/ser
 
 1. Run the program with a few username/serial pairs to get a feeling for its behavior.
 
-2. Reverse engineer the binary (Ghidra or Binary Ninja) and understand how the check works.
+2. Reverse engineer the binary (Ghidra or Binary Ninja) and understand how the check works. Note: Use the `*.armv7` for Binary Ninja Free; the free version doesn’t support AArch64.
 
 3. Find a valid serial for the username "procracker".
 
