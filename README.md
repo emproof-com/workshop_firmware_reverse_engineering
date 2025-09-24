@@ -34,6 +34,7 @@ For several tasks we require an AArch64 Linux execution environment. We provide 
  
 > **Note (architecture):** The Docker Compose service sets `platform: "linux/arm64"`.  
 > On x86_64 hosts (Intel macOS/Windows/Linux) Docker Desktop will run the image under emulation, so the first build and startup can be slower — that’s expected. On native ARM64 hosts (Apple Silicon, ARM servers) it runs natively and is faster.
+
 > **Note:** The Docker container can also run ARMv7 (armhf) binaries. We install the armhf runtime (dynamic loader + libs) in the image and register binfmt handlers for both `aarch64` and `arm` via the startup script.
 
 In addition, install the following graphical tools on your host for interactive reverse engineering tasks (these are not included in the container):
