@@ -11,8 +11,20 @@ fi
 docker buildx create --use --name multi >/dev/null 2>&1 || docker buildx use multi
 docker buildx inspect --bootstrap >/dev/null 2>&1 || true
 
-# Build ARM64 image and load it into the local daemon for compose to reuse.
-docker buildx build --platform linux/arm64 -t kali-re-tools:arm64 --load .
+IMAGE_TAG="kali-re-tools:arm64"
+DOCKERFILE_SHA="$(sha256sum Dockerfile | awk '{print $1}')"
+HASH_TAG="${IMAGE_TAG}-${DOCKERFILE_SHA}"
 
-# Run the workshop container.
+# build only when hash-tagged image is missing
+if ! docker image inspect "$HASH_TAG" >/dev/null 2>&1; then
+  echo "[build] building $HASH_TAG"
+  docker buildx build --platform linux/arm64 -t "$HASH_TAG" --load .
+else
+  echo "[build] up to date ($HASH_TAG)"
+fi
+
+# stable alias for compose
+docker tag "$HASH_TAG" "$IMAGE_TAG"
+
+# run
 docker compose run --rm kali
